@@ -1,16 +1,16 @@
 const app = new Vue({
     el:'#app',
     data: {
-        // caption: ''
-        // imageUrl: ''
+        caption: '',
+        imageUrl: ''
     },
     methods: {
         uploadImg: function(){
             let fileInput = document.querySelector('#image');
-            // console.log(fileInput)
+            console.log(fileInput)
 
             let formData = new FormData()
-            // formData.append('caption', this.caption)
+            formData.append('caption', this.caption)
             formData.append('image', fileInput.files[0])
 
             axios.post('http://localhost:3000/upload',formData)
