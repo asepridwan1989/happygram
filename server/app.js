@@ -15,8 +15,8 @@ const DB = process.env.DB
 // const url = `mongodb://${DB_USER}:${DB_PASSWORD}@ds117540.mlab.com:17540/${DB}`
 // const url = `mongodb://userHappygram:1234567890@ds117540.mlab.com:17540/happygram`
 // mongoose.connect(url, (err) => {
-//   if(!err) console.log('database connected...')
-//   else throw new Error(err)
+  // if(!err) console.log('database connected mlab...')
+  // else throw new Error(err)
 // })
 
 const indexRouter = require('./routes/index');
@@ -42,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/upload', uploadRouter);
+app.use('/contents', require('./routes/mainpage'));
 app.use('/images', imageRouter);
 // app.use('/pictures', pictureRouter);
 
