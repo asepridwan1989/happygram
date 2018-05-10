@@ -25,5 +25,12 @@ module.exports = {
                  data: err
              })
          }) 
+    },
+    getAll(req, res) {
+        Image.find().then((images) => {
+            res.send({images});
+        }, (e) => {
+            res.status(400).send(e);
+        });
     }
 }

@@ -22,6 +22,7 @@ const DB = process.env.DB
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const uploadRouter = require('./routes/upload');
+const imageRouter = require('./routes/image');
 // var pictureRouter = require('./routes/picture');
 
 const app = express();
@@ -40,7 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/upload', uploadRouter)
+app.use('/upload', uploadRouter);
+app.use('/images', imageRouter);
 // app.use('/pictures', pictureRouter);
 
 // catch 404 and forward to error handler
