@@ -39,7 +39,7 @@
                   axios.post('http://localhost:3000/users/login', payload)
                   .then( response => {
                       console.log(response.data.data.tokens[0].token)
-                      // this.token = response.data.data.tokens[0].token
+                      this.token = response.data.data.tokens[0].token
                   })
                   .catch( error => {
                       console.log('error dari upload.html', error)
