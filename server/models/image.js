@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const Joke = require('../lib/joke');
+const Joke = require('./../lib/joke')
 
 const imageSchema = new Schema({
     userId: String,
@@ -8,14 +8,14 @@ const imageSchema = new Schema({
     caption: String,
 })
 
-imageSchema.pre('save', true, function(next, done) {
+imageSchema.pre('save', function(next) {
     // calling next kicks off the next middleware in parallel
-    let image = this
+    let image = this;
     Joke.getJoke().then((result) => {
-        image.caption = result.value.Joke        
-        next();
+        image.caption = result.value.joke;
+        next();  
     })
-});
+  });
 
 let Image = mongoose.model('Images', imageSchema)
 module.exports = Image
