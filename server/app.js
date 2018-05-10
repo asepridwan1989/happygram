@@ -13,11 +13,11 @@ const DB_PASSWORD = process.env.DB_PASSWORD
 const DB = process.env.DB
 
 // const url = `mongodb://${DB_USER}:${DB_PASSWORD}@ds117540.mlab.com:17540/${DB}`
-const url = `mongodb://userHappygram:1234567890@ds117540.mlab.com:17540/happygram`
-mongoose.connect(url, (err) => {
-  if(!err) console.log('database connected...')
-  else throw new Error(err)
-})
+// const url = `mongodb://userHappygram:1234567890@ds117540.mlab.com:17540/happygram`
+// mongoose.connect(url, (err) => {
+//   if(!err) console.log('database connected...')
+//   else throw new Error(err)
+// })
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');

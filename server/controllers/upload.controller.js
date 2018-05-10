@@ -1,4 +1,5 @@
 const Image = require('../models/image')
+const { mongoose } = require('./../lib/mongoose-connection');
 
 module.exports = {
     upload: (req, res) => {
