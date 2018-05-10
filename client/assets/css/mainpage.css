@@ -1,0 +1,22 @@
+.container-head {
+  /* border: 1px solid red; */
+}
+
+.container-grid, .container-card {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* height: 50px;   */
+}
+
+img {
+  min-height: 30vh;
+  max-height: 30vh;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 50px;
+  background-color: mediumturquoise;
+}

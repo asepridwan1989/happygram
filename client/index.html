@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  
+  <!-- VueJS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+  <!-- Semantic CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+
+  <link rel="stylesheet" href="./assets/css/mainpage.css">
+
+  <title>Happygram.com</title>
+
+</head>
+
+<body>
+
+  <section id="app">
+    <!-- =====================================================SECTION NAVBAR===================================================== -->
+    <navbar></navbar>
+    <addpost></addpost>
+
+    <!-- =====================================================SECTION CONTENT===================================================== -->
+    <mainpage
+      :arrcontents="arrcontents"
+    ></mainpage>
+
+    <!-- =====================================================SECTION FOOTER===================================================== -->
+    <footer>
+      <p>© 2018 Happygram.com</p>
+    </footer>
+
+  </section>
+
+  <script src="./assets/js/com_navbar.js"></script>
+  <script src="./assets/js/com_mainpage.js"></script>
+  <script src="./assets/js/com_addpost.js"></script>
+  <script src="./assets/js/com_vue.js"></script>
+
+</body>
+
+</html>
