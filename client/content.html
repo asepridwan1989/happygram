@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+  <!-- Semantic CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+
+  <style>
+    .container-head {
+      border: 1px solid red;
+    }
+
+    .container-grid, .container-card {
+      border: 1px solid black;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* height: 50px;   */
+    }
+
+    img {
+      min-height: 30vh;
+      max-height: 30vh;
+    }
+    
+  </style>
+  
+
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- SECTION MENU -->
+  <div class="ui secondary pointing menu">
+    <a class="item">
+      Home
+    </a>
+    <a class="item">
+      Messages
+    </a>
+    <a class="item active">
+      Friends
+    </a>
+    <div class="right menu">
+      <a class="ui item">
+        Logout
+      </a>
+    </div>
+  </div>
+  <!-- <div class="ui segment">
+    <p>abc</p>
+  </div> -->
+  
+  <!-- SECTION CARD -->
+  <div class="container-head ui grid">
+    <div class="container-grid four wide column">
+      <div class="container-card">
+        <div class="ui card">
+          <div class="content">
+            <p>Elliot</p>
+          </div>
+          <div class="image">
+            <img src="./assets/images/jakarta1.jpg">
+          </div>
+          <div class="content">
+            <button class="ui icon button right floated">
+              <i class="cloud download icon"></i>
+            </button>
+            <!-- <i class="heart outline like icon"></i> -->
+            <!-- 17 likes -->
+            <div class="ui red button">
+              <i class="heart icon"></i> Like
+            </div>
+            <a class="ui basic red left pointing label">
+              1,048
+            </a>
+          </div>
+          <div class="extra content">
+            <div class="ui large transparent left icon input">
+              <i class="heart outline icon"></i>
+              <input type="text" placeholder="Add Comment...">
+            </div>
+          </div>
+        </div>   
+      </div>     
+    </div>
+    <div class="container-grid four wide column">
+        <div class="container-card">
+          <div class="ui card">
+            <div class="content">
+              <p>Elliot</p>
+            </div>
+            <div class="image">
+              <img src="./assets/images/nt5.jpg">
+            </div>
+            <div class="content">
+              <button class="ui icon button right floated">
+                <i class="cloud download icon"></i>
+              </button>
+              <!-- <i class="heart outline like icon"></i> -->
+              <!-- 17 likes -->
+              <div class="ui red button">
+                <i class="heart icon"></i> Like
+              </div>
+              <a class="ui basic red left pointing label">
+                1,048
+              </a>
+            </div>
+            <div class="extra content">
+              <div class="ui large transparent left icon input">
+                <i class="heart outline icon"></i>
+                <input type="text" placeholder="Add Comment...">
+              </div>
+            </div>
+          </div>   
+        </div>     
+      </div>
+  </div>
+
+
+
+</body>
+</html>
