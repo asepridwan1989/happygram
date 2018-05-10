@@ -4,7 +4,7 @@ const { mongoose } = require('./../lib/mongoose-connection');
 module.exports = {
     upload: (req, res) => {
         let imgObj = {
-            userId: 'yasir',
+            userId: req.user._id,
             imageUrl: req.file.cloudStoragePublicUrl,
             caption: req.body.caption,
             // like: '',
