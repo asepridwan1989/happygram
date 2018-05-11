@@ -12,7 +12,7 @@ var mainpage = Vue.component('mainpage', {
       <div class="container-card">
         <div class="ui card">
           <div class="content">
-            <p>{{ item.userId }}</p>
+            <p>{{ item.userId.username }}</p>
           </div>
           <div class="image">
             <img :src="item.imageUrl">

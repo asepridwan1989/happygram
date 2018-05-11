@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const Joke = require('./../lib/joke')
 
 const imageSchema = new Schema({
-    userId: String,
+    userId: { type: Schema.Types.ObjectId, ref: 'User' },
     imageUrl: String,
     caption: String,
 })

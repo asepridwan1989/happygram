@@ -13,18 +13,23 @@ new Vue({
   },
   created: function() {
     this.getContents()
+    let token = localStorage.getItem('happy-token');
+    if (!token) {
+      window.location.replace("http://127.0.0.1:8080/login.html");
+    }
   },
   methods: {
     getContents: function () {
 
-      axios.get('http://localhost:3000/contents')
+
+
+      axios.get('http://localhost:3000/images')
         .then(results => {
-
-          let arrResult = results.data.result;
-
-          this.arrcontents = results.data.result;
-          console.log('contents from server new', this.arrcontents);
-          
+          // let arrResult = results.data.result;
+          // this.arrcontents = results.data.result;
+          // console.log('contents from server new', this.arrcontents);
+          this.arrcontents = results.data.images;
+          console.log(this.arrcontents);
         })
         .catch(err => {
 

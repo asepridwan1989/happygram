@@ -27,7 +27,9 @@ module.exports = {
          }) 
     },
     getAll(req, res) {
-        Image.find().then((images) => {
+        Image.find()
+        .populate('userId', 'username')
+        .then((images) => {
             res.send({images});
         }, (e) => {
             res.status(400).send(e);

@@ -45,11 +45,10 @@
                 <div class="field">
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="text" placeholder="Password" v-model="password">
+                    <input type="password" placeholder="Password" v-model="password">
                 </div>
                 </div>
                 <button class="ui fluid large teal submit button" @click="login">Login</button>
-                <p>{{ token }}</p>
             </div>
         
             <div class="ui error message"></div>
@@ -61,7 +60,7 @@
             </div>
         </div>
     </div>
-    
+
     </div>
         
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -88,7 +87,10 @@
                   axios.post('http://localhost:3000/users/login', payload)
                   .then( response => {
                       console.log(response.data.data.tokens[0].token)
-                      this.token = response.data.data.tokens[0].token
+                      this.token = response.data.data.tokens[0].token;
+                    localStorage.setItem('happy-token', this.token);
+
+                      window.location.replace("http://127.0.0.1:8080/");
                   })
                   .catch( error => {
                       console.log('error dari upload.html', error)
