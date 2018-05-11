@@ -22,7 +22,7 @@ module.exports = {
     upload: (req, res) => {
       console.log('masuk sini gha?');
         let imgObj = {
-            // userId: req.user._id,
+            userId: req.user._id,
             imageUrl: req.file.cloudStoragePublicUrl,
             caption: req.body.caption,
             // like: '',

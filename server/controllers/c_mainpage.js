@@ -30,7 +30,7 @@ module.exports = {
           result
         })
       }
-    })
+    }).populate('userId', 'username')
   }
 
 }

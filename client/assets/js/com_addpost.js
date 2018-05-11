@@ -20,6 +20,7 @@ var addpost = Vue.component('addpost', {
         axios.post('http://localhost:3000/images',formData,  { headers: { 'x-auth': token } })
          .then( response => {
              console.log(response)
+             window.location.reload();
          })
          .catch( error => {
              console.log('error dari upload.html',error)
@@ -32,9 +33,9 @@ var addpost = Vue.component('addpost', {
     <div class="header">
       New Happygram Post :D
     </div>
-      <p></p><input type="text" placeholder="" v-model="caption">
+
       <p>Your new post: </p><input type="file" placeholder="image"  id="image">
-      <p></p><button @click="uploadImg">Upload</button>
+
     <div class="actions">
       <div class="ui black deny button">
         Not happy enough :(

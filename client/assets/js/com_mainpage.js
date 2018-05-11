@@ -30,7 +30,9 @@ var mainpage = Vue.component('mainpage', {
           </div>
           <div class="content">
             <button class="ui icon button right floated">
+              <a href="./assets/images/happygram1.jpeg" download>
               <i class="cloud download icon"></i>
+              </a>
             </button>
             <div class="ui red button">
               <i class="heart icon"></i> Like

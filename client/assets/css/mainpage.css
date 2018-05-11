@@ -1,9 +1,9 @@
 .container-head {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .container-grid, .container-card {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
