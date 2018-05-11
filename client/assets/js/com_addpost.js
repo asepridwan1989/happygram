@@ -32,7 +32,7 @@ var addpost = Vue.component('addpost', {
     <div class="header">
       New Happygram Post :D
     </div>
-      <p></p><input type="text" placeholder="caption" v-model="caption">    
+      <p></p><input type="text" placeholder="" v-model="caption">
       <p>Your new post: </p><input type="file" placeholder="image"  id="image">
       <p></p><button @click="uploadImg">Upload</button>
     <div class="actions">
@@ -47,7 +47,3 @@ var addpost = Vue.component('addpost', {
   </div>
   `
 })
-
-
-
-

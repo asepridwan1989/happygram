@@ -4,12 +4,14 @@ new Vue({
     arrcontents: [],
     item_contents: [],
     test_caption: '',
+    singleimage:'',
     hi: 'halooo'
   },
   component: {
     navbar: navbar,
+    addpost: addpost,
     mainpage: mainpage,
-    addpost: addpost
+    singlepost: singlepost
   },
   created: function() {
     this.getContents()
@@ -37,5 +39,10 @@ new Vue({
 
         })
     },
+    getObjImage: function(e) {
+      console.log('ini dari hasil doa',e)
+      this.singleimage = e.data.result
+    }
+
   }
 })
