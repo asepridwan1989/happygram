@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+  <!-- VueJS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Semantic CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+
+  <link rel="stylesheet" href="./assets/css/mainpage.css">
+
+  <title>Happygram.com</title>
+
+</head>
+
+<body>
+
+  <section id="app">
+    <!-- =====================================================SECTION NAVBAR===================================================== -->
+    <navbar></navbar>
+    <addpost></addpost>
+
+    <!-- =====================================================SECTION CONTENT===================================================== -->
+    <singlepost
+      :arrcontents="arrcontents"
+    ></singlepost>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.0&appId=181122496045479&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Bagikan</a></div>
+    <!-- =====================================================SECTION FOOTER===================================================== -->
+    <footer>
+      <p>© 2018 Happygram.com</p>
+    </footer>
+
+  </section>
+  <script src="./assets/js/com_navbar.js"></script>
+  <script src="./assets/js/com_addpost.js"></script>
+  <script src="./assets/js/com_vue.js"></script>
+  <script>
+  const app = new Vue({
+      el:'#app',
+      data: {
+          caption: '',
+          imageUrl: ''
+      },
+      methods: {
+          uploadImg: function(){
+              let fileInput = document.querySelector('#image');
+              console.log(fileInput)
+
+              let formData = new FormData()
+              formData.append('caption', this.caption)
+              formData.append('image', fileInput.files[0])
+
+              axios.post('http://localhost:3000/getOne/id',formData)
+               .then( response => {
+                   console.log(response)
+               })
+               .catch( error => {
+                   console.log('error dari upload.html',error)
+               })
+          }
+      }
+  })
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Happygram, share your happyness" />
+  <meta property="og:description" content="Are you happy?" />
+  <meta property="og:image"  content="https://pbs.twimg.com/profile_images/793146050668208128/NOTqkWQb_400x400.jpg" />
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+  <!-- VueJS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Semantic CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+
+  <link rel="stylesheet" href="./assets/css/mainpage.css">
+
+  <title>Happygram.com</title>
+
+</head>
+
+<body>
+
+  <section id="app">
+    <!-- =====================================================SECTION NAVBAR===================================================== -->
+    <navbar></navbar>
+    <addpost></addpost>
+    <singlepost
+      :item="singleimage"
+    ></singlepost>
+    <br/>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.0&appId=181122496045479&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <center><div class="fb-share-button" style="align:center" data-href="https://08f4354d.ngrok.io" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://08f4354d.ngrok.io%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Bagikan</a></div>
+    <!-- =====================================================SECTION CONTENT===================================================== -->
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <mainpage
+      :arrcontents="arrcontents"
+      @objimage="getObjImage"
+    ></mainpage>
+
+    <!-- =====================================================SECTION FOOTER===================================================== -->
+    <footer>
+      <p>© 2018 Happygram.com</p>
+    </footer>
+
+  </section>
+
+<script src="./assets/js/com_navbar.js"></script>
+<script src="./assets/js/com_addpost.js"></script>
+<script src="./assets/js/com_mainpage.js"></script>
+<script src="./assets/js/com_single.js"></script>
+<script src="./assets/js/com_vue.js"></script>
+
+
+</body>
+
+</html>
