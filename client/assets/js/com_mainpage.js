@@ -2,9 +2,20 @@ var mainpage = Vue.component('mainpage', {
   props: ['arrcontents', '', ''],
   data() {
       return {
+
       }
   },
   methods: {
+    getOneContent: function(id){
+
+      let url =  'http://localhost:3000/contents/getOne/' + id;
+      // console.log(url)
+      axios.get(url)
+      .then(result=>{
+        this.$emit('objimage', result)
+      })
+      .catch()
+    }
   },
   template:`
   <div class="container-head ui grid">
@@ -35,14 +46,11 @@ var mainpage = Vue.component('mainpage', {
               </div>
               <p>{{ item.caption }}</p>
             </div>
+            <button @click="getOneContent(item._id)">Continue</button>
           </div>
-        </div>   
-      </div>     
+        </div>
+      </div>
     </div>
   </div>
   `
 })
-
-
-
-
