@@ -22,9 +22,6 @@ new Vue({
   },
   methods: {
     getContents: function () {
-
-
-
       axios.get('http://localhost:3000/images')
         .then(results => {
           // let arrResult = results.data.result;

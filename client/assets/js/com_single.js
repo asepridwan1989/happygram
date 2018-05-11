@@ -11,10 +11,10 @@ var singlepost = Vue.component('singlepost', {
   <div class="container-card">
     <div class="image">
       <br/>
-      <center><h2> posted by : {{ item.userId }}</h2>
-      <center><img :src="item.imageUrl">
+      <center><h2> posted by : {{ item.userId.username }}</h2></center>
+      <center><img :src="item.imageUrl"></center>
       <br/>
-      <center><h2>{{ item.caption }}</h2>
+      <center><h2>{{ item.caption }}</h2></center>
     </div>
   </div>
 
